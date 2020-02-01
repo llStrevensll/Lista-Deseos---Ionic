@@ -17,7 +17,7 @@ export class ListasComponent implements OnInit {
 
   ngOnInit() {}
   
-
+  //Lista seleccionada
   listaSeleccionada(lista: Lista){
     if (this.terminada) {
       this.router.navigateByUrl(`/tabs/tab2/agregar/${lista.id}`);
@@ -25,7 +25,10 @@ export class ListasComponent implements OnInit {
       this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
     }
 
-   
-    
+  }
+   //borrarLista
+  borrarLista( lista: Lista){
+      
+    this.deseosService.borrarLista(lista);
   }
 }
