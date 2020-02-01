@@ -16,9 +16,13 @@ export class DeseosService {
 
     //Insertar listas en el arreglo
     this.listas.push(lista1,lista2);
+   }
 
-    
-    
+   //Crear Lista
+   crearLista(titulo: string){
+
+    const nuevaLista = new Lista(titulo);
+    this.listas.push(nuevaLista);
    }
 }
  
