@@ -45,9 +45,11 @@ export class Tab1Page {
             if (data.titulo.lenght === 0) {
               return;
             }
-            //Crear lista
-            this.deseosService.crearLista(data.titulo);
-            
+            //Crear lista y obtener id
+            const listaId = this.deseosService.crearLista(data.titulo);
+              
+            // Navegar a la lista con el respectivo
+            this.router.navigateByUrl(`/tabs/tab1/agregar/${listaId}`);
           }
         }
       ]

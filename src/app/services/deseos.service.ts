@@ -27,7 +27,17 @@ export class DeseosService {
     const nuevaLista = new Lista(titulo);
     this.listas.push(nuevaLista);
     this.guardarStorage();
+
+    return nuevaLista.id;
    }
+
+   //Obtener Lista
+   obtenerLista(id: string | number){
+     id = Number(id);
+
+     return this.listas.find(listaData => listaData.id === id);
+   }
+
 
    //Storage
    guardarStorage(){//JSON.stringify-> pasar a string
